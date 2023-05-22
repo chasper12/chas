@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+ 
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Apple Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+</head>
+ 
+<body>
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Toggle button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Navbar brand -->
+      <a class="navbar-brand mt-2 mt-lg-0" href="#">
+        <img
+          src="data:image/png;base64,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"
+          height="35"
+          alt="MDB Logo"
+          loading="lazy"
+        />
+      </a>
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Projects</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="/add">Apple Products</a>
+        </li>
+      </ul>
+      <!-- Left links -->
+    </div>
+    <!-- Collapsible wrapper -->
+
+   
+     
+      </div>
+    </div>
+    <!-- Right elements -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+	</header>
+	<style>
+		body {
+			 background-image: url('https://media2.giphy.com/media/26n79t82lmj989iAE/giphy.gif');
+			  height: 100vh; background-size: cover; background-repeat: no-repeat;
+		}
+		
+	</style>
+	
+
+    <div class="container my-2">	
+    <div class="card">
+    <div class="card-body">
+		
+        <div th:switch="${apple}" class="container my-5">
+            <p class="my-5">
+                
+            </p>
+            <div class="col-md-10">
+                <h2 th:case="null">No record found !!</h2>
+                <div th:case="*">
+                 <table class="table table-bordered">
+  					<thead>
+                            <tr>
+                                <th>Unit Name</th>
+                                <th>GB Type</th>                              
+                                <th>Color</th>
+                                <th>Quantity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="apple : ${apple}">
+                                <td th:text="${apple.unit.name}"></td>
+                                <td th:text="${apple.GBType}"></td>
+                                <td th:text="${apple.color}"></td>
+                                  <td th:text="${apple.quantity}"></td>
+                                <td>
+                                    <a th:href="@{/edit/{id}(id=${apple.id})}"
+                                             class="btn btn-primary">
+                                        <i class="fas fa-user-edit ml-2"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a th:href="@{/delete/{id}(id=${apple.id})}"
+                                              class="btn btn-primary">
+                                        <i class="fas fa-user-times ml-2"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+ 
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</body>
+ 
+</html>
